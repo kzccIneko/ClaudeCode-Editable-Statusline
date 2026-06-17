@@ -1,12 +1,14 @@
+[English](README.md) | [中文](README_CN.md)
+
 # Claude Code Statusline
 
-Modular, user-configurable status bar for [Claude Code](https://claude.ai/code) CLI. Works on Windows, macOS, and Linux. Works with any model (Claude, DeepSeek, etc. via Anthropic API route).
+Modular, user-configurable status bar for [Claude Code](https://claude.ai/code) CLI. Works on Windows, macOS, and Linux with any model (Claude, DeepSeek, etc.).
 
 ## Preview
 
 ```
-deepseek-v4-pro /max [my-session]  my-project (main)
-Ctx: 42%  Cache: 96%  In: 13k  Out: 8k  ~$0.04  5h: 12% -> 21:00  7d: 45% -> Thu 00:00
+Sonnet 4.6 [Pro]  /max [my-session]  my-project (main)
+Ctx: 42%  Cache: 96%  In: 13k  Out: 8k  ~$0.23  5h: 12% -> 21:00  7d: 45% -> Thu 00:00
 ```
 
 - **Line 1**: model name, effort level, session name, git repo + branch
@@ -44,14 +46,14 @@ Edit `~/.claude/statusline-config.json` to pick exactly what you want:
 
 | Key | Displays | Example |
 |-----|----------|---------|
-| `model` | Model display name | `deepseek-v4-pro` |
+| `model` | Model display name | `Sonnet 4.6 [Pro]` |
 | `effort` | Effort level | `/max` |
 | `session` | Session name (truncatable) | `[my-session]` |
 | `git` | Git repo + branch | `project (main)` |
 | `ctx` | Context window usage % | `Ctx: 42%` |
 | `cache` | Prompt cache hit rate % | `Cache: 96%` |
 | `tokens` | Input/output token counts | `In: 13k Out: 8k` |
-| `cost` | Estimated session cost | `~$0.04` |
+| `cost` | Estimated session cost | `~$0.23` |
 | `rate5h` | 5-hour rate limit + reset | `5h: 12% -> 21:00` |
 | `rate7d` | 7-day rate limit + reset | `7d: 45% -> Thu 00:00` |
 
@@ -120,7 +122,8 @@ claude-code-statusline/
 ├── statusline-config.json  Default config (user-customizable)
 ├── LICENSE                 MIT
 ├── .gitignore
-└── README.md
+├── README.md               English docs
+└── README_CN.md            中文文档
 ```
 
 ## License
