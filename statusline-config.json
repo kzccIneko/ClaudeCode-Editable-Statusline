@@ -1,0 +1,19 @@
+{
+  "_comment": "Claude Code Statusline — modular config. Edit this file to choose what to display.",
+  "line1": ["model", "effort", "session", "git"],
+  "line2": ["ctx", "cache", "tokens", "cost", "rate5h", "rate7d"],
+  "colors": true,
+  "session_max_len": 24,
+  "modules": {
+    "model":     { "desc": "Model display name" },
+    "effort":    { "desc": "Effort level, e.g. /max" },
+    "session":   { "desc": "Current session name" },
+    "git":       { "desc": "Git repo name and branch" },
+    "ctx":       { "desc": "Context window usage percent" },
+    "cache":     { "desc": "Prompt cache hit rate" },
+    "tokens":    { "desc": "Session input/output token counts" },
+    "cost":      { "desc": "Estimated session cost in USD" },
+    "rate5h":    { "desc": "5-hour rolling rate limit" },
+    "rate7d":    { "desc": "7-day rolling rate limit" }
+  }
+}
