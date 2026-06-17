@@ -88,6 +88,21 @@ No. The statusline reads from Claude Code's local session metadata — zero API 
 ### My rate limits don't show up
 Some API providers (e.g. DeepSeek) don't report rate limit info. The script gracefully skips unavailable fields.
 
+### Does this work regardless of where Claude Code is installed?
+Yes. The setup only touches `~/.claude/` — Claude Code's standard user config directory, independent of binary location. Works with CLI, npm global install, and Claude for Desktop (Claudian).
+
+### Using Claude for Desktop (Claudian)?
+If the global config doesn't take effect, add `statusLine` to your project's `.claude/settings.json` instead:
+
+```json
+{
+  "statusLine": {
+    "type": "command",
+    "command": "powershell -NoProfile -NonInteractive -File \"%USERPROFILE%\\.claude\\statusline.ps1\""
+  }
+}
+```
+
 ### How do I reset to default config?
 Delete `~/.claude/statusline-config.json` and re-run `setup.ps1` / `setup.sh`.
 
@@ -103,6 +118,8 @@ claude-code-statusline/
 ├── statusline.ps1          Windows statusline script (modular)
 ├── statusline.sh           Mac/Linux statusline script (modular)
 ├── statusline-config.json  Default config (user-customizable)
+├── LICENSE                 MIT
+├── .gitignore
 └── README.md
 ```
 
